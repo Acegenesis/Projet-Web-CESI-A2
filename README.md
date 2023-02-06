@@ -11,4 +11,6 @@ Je pref mc do moi
 
 yo matmat jte suce ?
 
-tu veux jouer à ca ? jte supprime 
+tu veux jouer à ca ? jte supprime
+
+stop la rigolade mtn
