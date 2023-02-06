@@ -5,11 +5,3 @@ Vive la corida
 pizza miam
 push pull legs mais sans les legs
 abdo ou macdo ??
-Je pref mc do moi
-eeeeeeeeeeeeeeeeeeeeeeeeee
-erjiogfhefgisdhfiosdfhzueildfokpbj
-epgfjeroigjdfm
-
-sdpofjfedmoigsdmwxds\*df
-sdf
-odgjsdfk
