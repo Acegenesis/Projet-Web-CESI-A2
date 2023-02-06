@@ -8,8 +8,5 @@ abdo ou macdo ??
 je test le code
 réimigration
 Je pref mc do moi
-jetsts
 
-
-trcyyuvovbbiygeggege
-efzkljoefsjfims nfhsuim fsfkjmfnief i tgetsetes tde tstsetee
+yo matmat jte fais chier ?
