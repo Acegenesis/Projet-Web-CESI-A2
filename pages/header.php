@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav>
-        <a href="/"><h1>CesiTonJob</h1></a>
+        <a href="/"><h1>C<p>esi</p>T<p>on</p>S<p>tage</p></h1></a>
         <ul>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>

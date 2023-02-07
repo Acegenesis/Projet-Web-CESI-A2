@@ -38,6 +38,16 @@ nav {
     box-shadow: black 20px 0px 20px 0px;
 }
 
+nav h1 {
+    display: flex;
+    align-items: center ;
+}
+
+nav h1 p {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-right: 5px;
+}
 nav a:focus {
     background: none;
 }
