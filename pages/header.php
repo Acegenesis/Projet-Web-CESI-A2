@@ -14,6 +14,7 @@
         <ul>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
             <li><a href="pages/connexion.php">Connexion</a></li>
         </ul>
     </nav>
