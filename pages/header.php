@@ -10,11 +10,12 @@
 </head>
 <body>
     <nav>
-        <a href="/"><h1>C<p>esi</p>T<p>on</p>S<p>tage</p></h1></a>
+       <!--<a href="/"><h1>C<p>esi</p>T<p>on</p>S<p>tage</p></h1></a>-->
+       <img src="../logoCTS.png" alt="logo">
         <ul>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
-            <li><a href="pages/connexion.php">Connexion</a></li>
+            <li><a href="pages/connexion2.php">Connexion</a></li>
         </ul>
     </nav>

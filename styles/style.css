@@ -92,7 +92,7 @@ section form input:nth-child(1) {
 
 section form input:nth-child(2) {
     width: fit-content;
-    background-color: #00A896;
+    background-color: rgb(0, 168, 150);
     border: 0;
 }
 
