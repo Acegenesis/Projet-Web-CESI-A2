@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2A1340;
+  --secondary-color: #F2F2F2;
+  --like-color: #ff0077;
+}
+
+body {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg {
+  height: 30px;
+  width: 30px;
+  fill: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*------------------*/
+/*----Header-------*/
+/*----------------*/
+
+#header {
+  margin: 40px 0;
+  width: 800px;
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-color);
+  border-radius: 50px;
+  font-size: 20px;
+  margin-left: 10px;
+
+}
+
+
+
+#header img {
+  width: 10%;
+  object-fit: contain;
+}
+
+#header ul {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+#header ul a {
+  color: var(--primary-color);
+}
+
+#header ul .user {
+  width: 10%;
+}
+
+#header svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--primary-color);
+}
+
+/*----------------*/
+/*----Search------*/
+/*----------------*/
+
+.search {
+  width: 600px;
+  margin-bottom: 40px;
+}
+
+.search .searchInput {
+  position: relative;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.search input[type="text"] {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  padding-left: 50px;
+  border-radius: 50px;
+  border: none;
+  background: var(--secondary-color);
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.search button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.search button svg {
+  fill: var(--primary-color);
+}
+
+.search .searchFilter {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.search .searchFilter select {
+  padding: 10px;
+  background: var(--secondary-color);
+  border-radius: 50px;
+}
+
+/* ---------------- */
+/* ----StageItem--- */
+/* ---------------- */
+
+.stageItem {
+  position: relative;
+  width: 800px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--secondary-color);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.stageItem img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stageItem .stageText {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: var(--primary-color);
+}
+
+.stageItem .stageTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stageItem .stageTitle h3 {
+  height: 20%;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.stageItem .stageTitle h4 {
+  height: 10%;
+  opacity: 0.7;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.stageItem .stageTitle p {
+  height: 70%;
+  font-size: 15px;
+}
+
+.stageItem .stageTitle svg {
+  fill: var(--primary-color);
+}
+
+.stageItem .like {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+.stageItem .like svg {
+  fill: var(--like-color);
+}
+
+
+
+/*----------------*/
+/*----Login--------*/
+/*----------------*/
+#login {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  size: 100px;
+padding-top: 45%;
+}
+
+#form{
+padding-top: 40%;
+}
+
+.boxlogin {
+  background-color: whitesmoke;
+  border: none;
+  padding: 5px 5px;
+  color: #464646;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.placeholder{
+justify-content: left;
+font-size:12px;
+}
+
+.boxlogin:focus {
+  border-bottom: 3px solid #c4a5ff;
+  transition: ease-in 0.3s;
+}
+
+.forgot{
+  font-size: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  font-style: italic;
+}
+
+#LOGIN{
+  background-color: #c4a5ff;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+}
