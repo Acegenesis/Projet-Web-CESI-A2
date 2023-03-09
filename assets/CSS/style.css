@@ -206,8 +206,8 @@ button {
 
 .stageItem .like {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   width: 40px;
   height: 40px;
   display: flex;
