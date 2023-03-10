@@ -72,7 +72,7 @@ button {
 
 
 #header img {
-  width: 10%;
+  width: 100%;
   object-fit: contain;
 }
 
@@ -88,7 +88,7 @@ button {
   color: var(--primary-color);
 }
 
-#header ul .user {
+#header a {
   width: 10%;
 }
 
@@ -154,17 +154,16 @@ button {
 /* ----StageItem--- */
 /* ---------------- */
 
-.stageList {
+.list {
   width: 800px;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-.stageItem {
+.itemList {
   position: relative;
   width: 800px;
-  height: 300px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -173,13 +172,13 @@ button {
   overflow: hidden;
 }
 
-.stageItem img {
+.itemList img {
   width: 40%;
   height: 100%;
   object-fit: cover;
 }
 
-.stageItem .stageText {
+.itemList .itemText {
   width: 60%;
   height: 100%;
   display: flex;
@@ -188,35 +187,35 @@ button {
   color: var(--primary-color);
 }
 
-.stageItem .stageTitle {
+.itemList .itemTitle {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.stageItem .stageTitle h3 {
+.itemList .itemTitle h3 {
   height: 20%;
   font-size: 40px;
   margin-bottom: 10px;
 }
 
-.stageItem .stageTitle h4 {
+.itemList .itemTitle h4 {
   height: 10%;
   opacity: 0.7;
   font-size: 15px;
   margin-bottom: 20px;
 }
 
-.stageItem .stageTitle p {
+.itemList .itemTitle p {
   height: 70%;
   font-size: 15px;
 }
 
-.stageItem .stageTitle svg {
+.itemList .itemTitle svg {
   fill: var(--primary-color);
 }
 
-.stageItem .like {
+.itemList .like {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -229,7 +228,7 @@ button {
   border-radius: 50%;
 }
 
-.stageItem .stars {
+.itemList .stars {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -240,7 +239,7 @@ button {
   border-radius: 50px;
 }
 
-.stageItem .stars p {
+.itemList .stars p {
   color: white;
   display: flex;
   align-items: center;
@@ -249,13 +248,13 @@ button {
   opacity: 0.7;
 }
 
-.stageItem .stars svg {
+.itemList .stars svg {
   height: 30px;
   width: 30px;
   fill: orange;
 }
 
-.stageItem .like svg {
+.itemList .like svg {
   fill: var(--like-color);
 }
 
