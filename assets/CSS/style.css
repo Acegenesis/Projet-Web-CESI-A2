@@ -8,16 +8,21 @@
 
 :root {
   --primary-color: #2A1340;
-  --secondary-color: #F2F2F2;
+  --secondary-color: #f2f2f2;
   --like-color: #ff0077;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
   background: var(--primary-color);
   color: var(--secondary-color);
   font-family: "Roboto", sans-serif;
-  height: 100vh;
-  width: 100vw;
+  height: fit-content;
+  width: 100%;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -149,6 +154,13 @@ button {
 /* ----StageItem--- */
 /* ---------------- */
 
+.stageList {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .stageItem {
   position: relative;
   width: 800px;
@@ -206,8 +218,8 @@ button {
 
 .stageItem .like {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 20px;
+  left: 20px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -215,6 +227,32 @@ button {
   align-items: center;
   background: var(--primary-color);
   border-radius: 50%;
+}
+
+.stageItem .stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 40px;
+  padding: 20px;
+  background: var(--primary-color);
+  border-radius: 50px;
+}
+
+.stageItem .stars p {
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.stageItem .stars svg {
+  height: 30px;
+  width: 30px;
+  fill: orange;
 }
 
 .stageItem .like svg {
@@ -226,55 +264,97 @@ button {
 /*----------------*/
 /*----Login--------*/
 /*----------------*/
-#login {
-  font-family: "Roboto", sans-serif;
-  font-size: 3rem;
-  color: white;
+
+form {
+  height: calc(100vh - 160px - 140px );
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+form h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+form div {
+  width: 100%;
+  position: relative;
+}
+
+.formInput {
+  background-color: var(--secondary-color);
+  border-radius: 50px;
+  padding: 20px;
+  padding-left: 60px;
+  color: var(--primary-color);
+  outline: none;
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+}
+
+form div svg {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  transform: translateY(-50%);
+  fill: var(--primary-color);
+  opacity: 0.7;
+}
+
+form a {
+  width: 100%;
+  margin-right: 20px;
+  font-size: 15px;
+  text-align: right;
+  color: var(--secondary-color);
+  opacity: 0.7;
+}
+
+form button {
+  border: var(--secondary-color) solid 1px;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: var(--secondary-color);
+  margin-top: 20px;
+  width: 100%;
+  font-size:20px;
+  text-transform: uppercase;
+}
+
+label {
+  position: relative;
+}
+
+input {
+  padding: 10px 30px;
+}
+
+
+/*----------------*/
+/*----Footer------*/
+/*----------------*/
+
+footer {
+  margin-top: 40px;
+  width: 800px;
+  height: 100px;
+  background: var(--secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  size: 100px;
-padding-top: 45%;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
 }
 
-#form{
-padding-top: 40%;
-}
-
-.boxlogin {
-  background-color: whitesmoke;
-  border: none;
-  padding: 5px 5px;
-  color: #464646;
-  margin-bottom: 10px;
-  outline: none;
-}
-
-.placeholder{
-justify-content: left;
-font-size:12px;
-}
-
-.boxlogin:focus {
-  border-bottom: 3px solid #c4a5ff;
-  transition: ease-in 0.3s;
-}
-
-.forgot{
-  font-size: 12px;
-  color: #ffffff;
-  text-decoration: none;
-  font-style: italic;
-}
-
-#LOGIN{
-  background-color: #c4a5ff;
-  border: none;
-  padding: 10px 20px;
-  color: #ffffff;
-  margin-top: 10px;
-  outline: none;
-  border-radius: 5px;
-  cursor: pointer;
-  align-items: center;
+footer p {
+  color: var(--primary-color);
+  font-size: 20px;
 }
