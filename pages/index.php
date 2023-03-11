@@ -3,10 +3,13 @@
 <?php include('../components/search.php'); ?>
 
 <div class="list">
-    <?php include('../components/itemList.php'); ?>
-    <?php include('../components/itemList.php'); ?>
-    <?php include('../components/itemList.php'); ?>
-    <?php include('../components/itemList.php'); ?>
+    <?php 
+        $id = 1;
+        for ($i=0; $i < 20; $i++) {
+            include('../components/itemList.php');
+            $id++;
+        } 
+    ?>
 </div>
 
 

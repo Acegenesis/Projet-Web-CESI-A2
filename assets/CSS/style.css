@@ -10,6 +10,8 @@
   --primary-color: #2A1340;
   --secondary-color: #f2f2f2;
   --like-color: #ff0077;
+  --primary-width: 1150px;
+  --secondary-width: 800px;
 }
 
 html {
@@ -56,7 +58,7 @@ button {
 
 #header {
   margin: 40px 0;
-  width: 800px;
+  width: var(--primary-width);
   height: 80px;
   padding: 20px;
   display: flex;
@@ -103,7 +105,7 @@ button {
 /*----------------*/
 
 .search {
-  width: 600px;
+  width: var(--secondary-width);
   margin-bottom: 40px;
 }
 
@@ -155,7 +157,7 @@ button {
 /* ---------------- */
 
 .list {
-  width: 800px;
+  width: var(--primary-width);
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -163,7 +165,7 @@ button {
 
 .itemList {
   position: relative;
-  width: 800px;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -215,19 +217,6 @@ button {
   fill: var(--primary-color);
 }
 
-.itemList .like {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--primary-color);
-  border-radius: 50%;
-}
-
 .itemList .stars {
   display: flex;
   align-items: center;
@@ -254,11 +243,41 @@ button {
   fill: orange;
 }
 
-.itemList .like svg {
-  fill: var(--like-color);
+.itemList .like {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 50%;
 }
 
+.itemList .like svg {
+  width: 25px;
+  height: 25px;
+  fill: var(--like-color);
+  animation: identifier 0.2s ease-out;  
+}
 
+.itemList .liked svg {
+  animation: identifier 0.2s ease-out;
+}
+
+@keyframes identifier {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 /*----------------*/
 /*----Login--------*/
@@ -266,7 +285,7 @@ button {
 
 form {
   height: calc(100vh - 160px - 140px );
-  width: 600px;
+  width: var(--secondary-width);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -343,7 +362,7 @@ input {
 
 footer {
   margin-top: 40px;
-  width: 800px;
+  width: var(--primary-width);
   height: 100px;
   background: var(--secondary-color);
   display: flex;
