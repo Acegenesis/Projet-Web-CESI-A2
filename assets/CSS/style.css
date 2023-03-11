@@ -260,7 +260,7 @@ button {
   width: 25px;
   height: 25px;
   fill: var(--like-color);
-  animation: identifier 0.2s ease-out;  
+  animation: identifier 0.2s ease-out;
 }
 
 .itemList .liked svg {
@@ -271,9 +271,11 @@ button {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(0.8);
   }
+
   100% {
     transform: scale(1);
   }
@@ -284,13 +286,19 @@ button {
 /*----------------*/
 
 form {
-  height: calc(100vh - 160px - 140px );
+  height: calc(100vh - 160px - 140px);
   width: var(--secondary-width);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+input:focus {
+  border: 3px solid;
+ border-color: #c4a5ff;
+  transition: border 0.3s steps(10);
 }
 
 form h1 {
@@ -318,6 +326,7 @@ form div {
   font-size: 20px;
 }
 
+
 form div svg {
   position: absolute;
   top: 25px;
@@ -343,7 +352,7 @@ form button {
   color: var(--secondary-color);
   margin-top: 20px;
   width: 100%;
-  font-size:20px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
