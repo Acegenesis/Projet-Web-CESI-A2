@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "Pour tous mes slime, les meilleures offres de stage",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "../icon/icon-256.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Cesi Ton Stage",
+  "short_name": "CTS",
+  "start_url": "../components/header.php"
+}
