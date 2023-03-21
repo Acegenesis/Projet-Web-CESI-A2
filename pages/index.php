@@ -4,12 +4,32 @@
 
 <div class="list">
     <?php 
-        $id = 1;
-        for ($i=0; $i < 20; $i++) {
+        include('../fonctions/stages.php');
+
+        $stages = new Stage($conn);
+        $nb_stages = 0;
+        
+        foreach($stages->getAll() as $stage) {
+            $nb_stages ++;
+            $title = $stage['title_internship'];
+            $description = $stage['description_internship'];
+            $entreprise = $stage['name_company'];
+            $id = $stage['id_internship'];
+            if($id){
+                $skill = $stages->getSkills($id);
+            } else {
+                $skill = [];
+            }
             include('../components/itemList.php');
-            $id++;
-        } 
+        }
+        $articles_par_page = 3;
+        $nombre_pages = ceil($nb_stages / $articles_par_page);
+        echo $nombre_pages;
     ?>
+    <div class="more-results">
+  <span>Plus de résultats</span>
+  <i class="fas fa-angle-down"></i>
+</div>
 </div>
 
 

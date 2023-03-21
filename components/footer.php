@@ -4,5 +4,6 @@
                 </p>
         </footer>
         <script src="../assets/js/script.js"></script>
+        <script src="../assets/JS/search.js"></script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+<div class="list">
+    <?php
+        include('../fonctions/entreprise.php');
+        $entreprises = new Entreprise($conn);
+        $likedEntities = $entreprises->getLikedEntities();
+        foreach($entreprises->getAll() as $entreprise) {
+            $name = $entreprise['name_company'];
+            $description = $entreprise['description_company'];
+            $id = $entreprise['id_company'];
+            $mark = $entreprises->getMark($id);
+            if (in_array($id, $likedEntities)) {
+                include('../components/itemList.php');
+            }
+        }
+    ?>
+</div>
+
+La méthode getLikedEntities() retourne un tableau contenant les identifiants des entités qui ont été likées. On utilise la fonction in_array() pour vérifier si l'identifiant de l'entité courante est présent dans ce tableau. Si c'est le cas, on inclut le composant itemList.php pour afficher l'entité.
+La fonction getLikedEntities() est une méthode de la classe Entreprise qui permet de récupérer les identifiants des entreprises qui ont été likées.
+class Entreprise {
+    // ...
+    
+    public function getLikedEntities() {
+        $likedEntities = array();
+        // Effectuer une requête SQL pour récupérer les identifiants des entreprises likées
+        $query = "SELECT id_company FROM likes WHERE user_id = :user_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':user_id', $this->user_id);
+        $stmt->execute();
+        // Ajouter les identifiants récupérés dans le tableau $likedEntities
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $likedEntities[] = $row['id_company'];
+        }
+        return $likedEntities;
+    }
+    
+    // ...
+}
+
+Dans cette méthode, on commence par initialiser un tableau vide $likedEntities qui va contenir les identifiants des entreprises likées. Ensuite, on effectue une requête SQL pour récupérer les identifiants des entreprises qui ont été likées par l'utilisateur. La requête utilise la table likes qui contient des enregistrements indiquant les identifiants des entreprises likées par chaque utilisateur.
+
+Une fois que les identifiants ont été récupérés, on les ajoute au tableau $likedEntities en utilisant la méthode array_push() ou la notation $likedEntities[] = $row['id_company']. Enfin, on retourne le tableau $likedEntities contenant tous les identifiants des entreprises likées par l'utilisateur.

@@ -1,19 +1,26 @@
-<div class="itemList" style="height: <?php echo ($a === 0) ? '250px' : '200px' ?>">
+<div class="itemList" style="height: <?php echo ($a === 0) ? '300px' : '200px' ?>" <?php echo "id = 'item_" . $id . "'"?>>
     <img src="../assets/img/max.png" alt="">
     <div class="itemText">
         <div class="itemTitle">
             <span>
-                <h3><?php echo ($a === 0)  ? "Stage MA2T" : "Entreprise MA2T" ?></h3>
+                <a href="" class="name"><h3><?php echo ($a === 0)  ? $title :  $name ?></h3></a>
                 <?php if($a === 0 ) : ?>
-                    <h4>EntrePRise StraZIZI</h4>
+                    <a href=""><h4><?php echo $entreprise ?></h4></a>
+                    <div><?php
+                        if($skill) {
+                            foreach($skill as $s) {
+                                echo "<p>" . $s['name_skill'] . "</p>";
+                            }
+                        } else {
+                            echo "<p> Aucune compétence </p>";
+                        }
+                    ?></div>
                 <?php endif ?>
             </span>
-            <?php include('stars.php') ?>
+            <?php ($a != 0) ? include('stars.php') : ''?>
         </div>
         <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia accusantium accusamus, mollitia doloremque
-            incidunt vero sunt error, quasi fugiat facilis beatae adipisci, numquam animi eaque porro vitae rerum.
-            Impedit, nulla?
+            <?php echo ($a === 0) ? $description : $description ?>
         </p>
     </div>
     <?php include("like.php") ?>

@@ -1,5 +1,5 @@
 <?php include('../components/header.php'); ?>
-<?php $a = 1; ?>
+<?php $a = 2; ?>
 <?php include('../components/search.php'); ?>
 
 <div class="list">

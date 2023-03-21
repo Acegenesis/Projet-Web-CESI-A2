@@ -1,2 +1,0 @@
-browser-sync start --proxy "localhost" --files "*/*/*.*" "*/*.*" --browser "chrome"
- 

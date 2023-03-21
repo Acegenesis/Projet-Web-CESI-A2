@@ -7,11 +7,12 @@
 }
 
 :root {
-  --primary-color: #2A1340;
+  --primary-color: #3c1053;
   --secondary-color: #f2f2f2;
   --like-color: #ff0077;
   --primary-width: 1150px;
   --secondary-width: 800px;
+  
 }
 
 html {
@@ -193,19 +194,41 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding-bottom: 20px;
 }
 
-.itemList .itemTitle h3 {
+.itemList .itemTitle span {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemList .itemTitle a h3 {
+  color: var(--primary-color);
   height: 20%;
-  font-size: 40px;
-  margin-bottom: 10px;
+  font-size: 35px;
 }
 
-.itemList .itemTitle h4 {
-  height: 10%;
-  opacity: 0.7;
+.itemList .itemTitle a h4 {
+  color: var(--primary-color);
   font-size: 15px;
-  margin-bottom: 20px;
+}
+
+.itemList .itemTitle span div {
+  display: flex;
+  gap: 20px;
+}
+
+.itemList .itemTitle span div p {
+  display: flex;
+  justify-content: center;
+  min-width: 60px;
+  font-size: 12px;
+  opacity: 0.7;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 5px 10px;
+  border-radius: 50px;
 }
 
 .itemList .itemTitle p {
@@ -295,7 +318,7 @@ form {
   gap: 20px;
 }
 
-input:focus {
+input:focus, input:hover {
   border: 3px solid;
  border-color: #c4a5ff;
   transition: border 0.3s steps(10);
@@ -365,6 +388,18 @@ input {
 }
 
 
+
+
+input:valid {
+  border: 3px solid rgb(176, 236, 176);
+}
+
+input:invalid {
+  border: 3px solid rgb(221, 80, 80);
+}
+
+
+
 /*----------------*/
 /*----Footer------*/
 /*----------------*/
@@ -384,4 +419,34 @@ footer {
 footer p {
   color: var(--primary-color);
   font-size: 20px;
+}
+
+/*----------------*/
+/*----Profile--------*/
+/*----------------*/
+
+input.CV, input.LM{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: var(--secondary-width);
+}
+
+label.CV, label.LM{
+  display: flex;
+  flex-direction: column; /* Modification apportée */
+  align-items: center;
+  justify-content: center;
+}
+
+#userprofile{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: var(--secondary-width);
+  height: calc(100vh - 160px - 140px);
 }

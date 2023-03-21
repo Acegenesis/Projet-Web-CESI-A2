@@ -11,13 +11,14 @@
 </head>
 
 <body>
+    <?php require '../fonctions/connection.php'; ?>
     <nav id="header">
         <a href="/">
             <img src="../assets/img/logo.png" alt="">
         </a>
         <ul>
             <li><a href="/pages/entreprises.php">Entreprises</a></li>
-            <li><a href="favoris.html">Favoris</a></li>
+            <li><a href="/pages/fav.php">Favoris</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <a href="../pages/sign.php?type=in">
