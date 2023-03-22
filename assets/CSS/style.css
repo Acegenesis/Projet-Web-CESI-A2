@@ -12,7 +12,7 @@
   --like-color: #ff0077;
   --primary-width: 1150px;
   --secondary-width: 800px;
-  
+
 }
 
 html {
@@ -57,20 +57,6 @@ button {
 /*----Header-------*/
 /*----------------*/
 
-#header {
-  margin: 40px 0;
-  width: var(--primary-width);
-  height: 80px;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--secondary-color);
-  border-radius: 50px;
-  font-size: 20px;
-  margin-left: 10px;
-
-}
 
 
 
@@ -84,7 +70,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 75px;
+  margin-left: 30px;
 }
 
 #header ul a {
@@ -99,7 +86,24 @@ button {
   width: 40px;
   height: 40px;
   fill: var(--primary-color);
+  margin-left: 40px;
 }
+
+#header {
+  margin: 40px 0;
+  width: var(--primary-width);
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-color);
+  border-radius: 50px;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
 
 /*----------------*/
 /*----Search------*/
@@ -309,7 +313,7 @@ button {
 /*----------------*/
 
 form {
-  height: calc(100vh - 160px - 140px);
+  height: 100vh;
   width: var(--secondary-width);
   display: flex;
   flex-direction: column;
@@ -318,9 +322,10 @@ form {
   gap: 20px;
 }
 
-input:focus, input:hover {
+input:focus,
+input:hover {
   border: 3px solid;
- border-color: #c4a5ff;
+  border-color: #c4a5ff;
   transition: border 0.3s steps(10);
 }
 
@@ -331,6 +336,13 @@ form h1 {
   color: var(--secondary-color);
   margin-bottom: 20px;
 }
+
+#connectBtn:hover {
+  background-color: #c4a5ff;
+  color: white;
+  transition: background-color 0.3s steps(10);
+}
+
 
 form div {
   width: 100%;
@@ -368,10 +380,11 @@ form a {
   opacity: 0.7;
 }
 
-form button {
+form input[type="submit"] {
   border: var(--secondary-color) solid 1px;
   border-radius: 50px;
   padding: 10px 20px;
+  background: var(--primary-color);
   color: var(--secondary-color);
   margin-top: 20px;
   width: 100%;
@@ -403,45 +416,54 @@ input:invalid {
 /*----------------*/
 /*----Footer------*/
 /*----------------*/
-
 footer {
   margin-top: 40px;
   width: var(--primary-width);
-  height: 100px;
+  color: var(--primary-color);
+  height: 80px;
   background: var(--secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
 }
 
-footer p {
+footer a{
   color: var(--primary-color);
+  text-decoration: none;
   font-size: 20px;
+  text-align:right;
 }
+
 
 /*----------------*/
 /*----Profile--------*/
 /*----------------*/
 
-input.CV, input.LM{
+input.CV,
+input.LM {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
   width: var(--secondary-width);
+  background-color: #c4a5ff;
+  border-radius: 50px;
 }
 
-label.CV, label.LM{
+label.CV,
+label.LM {
   display: flex;
-  flex-direction: column; /* Modification apportée */
+  flex-direction: column;
+  /* Modification apportée */
   align-items: center;
   justify-content: center;
 }
 
-#userprofile{
+#userprofile {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -449,4 +471,51 @@ label.CV, label.LM{
   gap: 20px;
   width: var(--secondary-width);
   height: calc(100vh - 160px - 140px);
+
+}
+
+
+
+/*----------------*/
+/*----Contact--------*/
+/*----------------*/
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  gap: 20px;
+  width: var(--secondary-width);
+  height: calc(100vh - 160px - 140px);
+}
+
+/*----------------*/
+/*----Pagination--*/
+/*----------------*/
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.pagination-button {
+  margin: 0 0.5em;
+  padding: 0.5em;
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.pagination-button:hover {
+  background-color: #e6e6e6;
+}
+
+.pagination-button.active {
+  background-color: #007bff;
+  color: white;
 }
