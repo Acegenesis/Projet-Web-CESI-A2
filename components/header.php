@@ -12,4 +12,5 @@
 </head>
 
 <body>
-    <?php require '../fonctions/bdd.php'; ?>
+    <?php require '../fonctions/bdd.php';?>
+

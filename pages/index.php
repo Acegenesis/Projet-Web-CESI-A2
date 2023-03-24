@@ -1,5 +1,5 @@
 <?php include('../components/header.php');
-    
+
     if (isset($_COOKIE['user'])) :
         include('../components/navBar.php');
         $user = $_COOKIE['user'];
