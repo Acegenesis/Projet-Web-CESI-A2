@@ -23,7 +23,7 @@ html {
 body {
   background: var(--primary-color);
   color: var(--secondary-color);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Product Sans', sans-serif;
   height: fit-content;
   width: 100%;
   overflow-x: hidden;
@@ -412,6 +412,89 @@ input:invalid {
 }
 
 
+/* ---------------- */
+/* ----USER-------- */
+/* ---------------- */
+
+.userDesc {
+  margin-top: 20px;
+  min-height: calc(100vh - 160px - 140px);
+  width: var(--secondary-width);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--secondary-color);
+  padding: 40px;
+  border-radius: 50px;
+  color: var(--primary-color);
+}
+
+.userDesc h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.userDesc img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  margin: 20px 60px 40px 0px;
+  object-fit: cover;
+}
+
+.userDesc div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  border-left: var(--primary-color) solid 4px;
+  padding-left: 60px;
+  margin-bottom: 40px;
+}
+
+.userDesc label {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.userDesc h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px 0;
+  text-decoration: underline;
+}
+
+.userDesc input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.userDesc span {
+  position: relative;
+  font-size: 20px;
+  font-weight: 300;
+  width: 100%;
+  padding: 20px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50px;
+}
 
 /*----------------*/
 /*----Footer------*/
@@ -423,18 +506,31 @@ footer {
   height: 80px;
   background: var(--secondary-color);
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
+  font-size: 15px;
+  font-weight: 100px;
+  justify-content: space-between;
 }
 
-footer a{
-  color: var(--primary-color);
-  text-decoration: none;
+footer a {
   font-size: 20px;
-  text-align:right;
+  color: var(--primary-color);
+  margin-left: 20px;
+  text-transform: uppercase;
+  padding: 10px;
+  font-weight: 300px;
+  margin-top: 30px;
+}
+
+footer p {
+  font-size: 20px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  padding: 10px;
+  font-weight: 300px;
+  margin-top: 30px;
 }
 
 
@@ -485,10 +581,53 @@ label.LM {
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   width: var(--secondary-width);
   height: calc(100vh - 160px - 140px);
 }
+
+#contact {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #f8f8f8;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#contact h1 {
+  margin-top: -70px;
+  font-size: 30px;
+  text-transform: uppercase;
+
+}
+
+#contact h2 {
+  font-size: 24px;
+
+}
+
+#contact p {
+font-weight: 300px;
+}
+
+#contact ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#contact a {
+  color: #000;
+}
+
+#contact a:hover {
+  color: #666;
+}
+
 
 /*----------------*/
 /*----Pagination--*/
@@ -518,4 +657,44 @@ label.LM {
 .pagination-button.active {
   background-color: #007bff;
   color: white;
+}
+
+/*----------------*/
+/*----Mentions--*/
+/*----------------*/
+
+.legal {
+  font-size: 16px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  gap: 100px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: var(--secondary-color);
+
+}
+
+.container h1 {
+  margin-top: 10px;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.container ul {
+  display: grid;
+  gap: 5px;
+}
+
+.container p,
+.container li {
+  display: grid;
+  gap: 10px;
 }

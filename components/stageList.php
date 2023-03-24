@@ -3,20 +3,23 @@
 <div class="list">
     <?php 
         include('../fonctions/stages.php');
+
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         $limit = 3;
         $offset = $limit * ($page - 1);
+
         $stages = new Stage($conn);        
 
         $total = count($stages->getAll());
         $pages = ceil($total / $limit);
 
-        $stages_list = $stages->getAllWithLimit($limit, $offset);
+        $stages_list = $stages->getAllWithLimitStage($limit, $offset);
         foreach($stages_list as $stage) {
             $title = $stage['title_internship'];
             $description = $stage['description_internship'];
             $entreprise = $stage['name_company'];
             $id = $stage['id_internship'];
+            $image = "../assets/img/code.png";
             if($id){
                 $skill = $stages->getSkills($id);
             } else {
@@ -37,5 +40,6 @@
     <?php if($page < $pages) { ?>
         <a href="?page=<?php echo $page + 1 ?>">></a>
     <?php } ?>
+
     
 </div>

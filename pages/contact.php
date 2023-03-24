@@ -1,8 +1,9 @@
 <?php include('../components/header.php'); ?>
+<?php include('../components/navbar.php'); ?>
 
 <body>
     <div id="contact">
-        <h1>Contact</h1>
+        <h1>A propos de nous</h1>
         <p>Bienvenue sur "Cesi Ton Stage", votre plateforme dédiée à la recherche de stage en entreprise ! Nous sommes une entreprise engagée dans la réussite professionnelle des étudiants et des jeunes diplômés.
 
             Notre mission est de faciliter votre recherche de stage en regroupant sur notre site web différentes offres de stage provenant d'entreprises diverses. Nous sommes convaincus que cette plateforme sera un outil indispensable pour vous aider à trouver le stage de vos rêves.
@@ -15,12 +16,12 @@
 
             Merci d'avoir choisi "Cesi Ton Stage" pour votre recherche de stage. Nous sommes impatients de vous aider à trouver l'opportunité qui vous conviendra le mieux.</p>
 <h2>Adresse</h2>
-<p>1 rue de la Paix</p>
-<p>75000 Paris</p>
+<li>1 rue de la Paix</li>
+<li>75000 Paris</li>
 <h2>Téléphone</h2>
-<p>01 23 45 67 89</p>
+<li>01 23 45 67 89</li>
 <h2>Email</h2>
-<p>contact@cts.fr</p>
+<li>contact@cts.fr</li>
     </div>
 </body>
 

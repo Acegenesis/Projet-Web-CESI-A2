@@ -1,11 +1,13 @@
 <?php include('../components/header.php');
+    
     if (isset($_COOKIE['user'])) :
         include('../components/navBar.php');
         $user = $_COOKIE['user'];
         $a = 0;
         include('../components/stageList.php');
+        include('../components/footer.php');
 ?>
-   
+
 <?php else : ?>
     <form id="form" method="post" action="../fonctions/verif.php">
         <h1>SIGN IN</h1>
@@ -25,4 +27,3 @@
     </form>
     <script type="text/javascript" src="../assets/JS/sign.js"></script>
 <?php endif; ?>
-<?php include('../components/footer.php'); ?>

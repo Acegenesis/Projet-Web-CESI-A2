@@ -1,5 +1,6 @@
 <div class="itemList" style="height: <?php echo ($a === 0) ? '300px' : '200px' ?>" <?php echo "id = 'item_" . $id . "'"?>>
-    <img src="../assets/img/max.png" alt="">
+    
+    <img src= <?php echo $image; ?> alt  ="">
     <div class="itemText">
         <div class="itemTitle">
             <span>
