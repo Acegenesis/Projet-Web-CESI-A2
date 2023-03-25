@@ -4,7 +4,7 @@
     <div class="itemText">
         <div class="itemTitle">
             <span>
-                <a href="" class="name"><h3><?php echo ($a === 0)  ? $title :  $name ?></h3></a>
+                <a href="../pages/entreprise.php?name=<?php echo $name ?>" class="name"><h3><?php echo ($a === 0)  ? $title :  $name ?></h3></a>
                 <?php if($a === 0 ) : ?>
                     <a href=""><h4><?php echo $entreprise ?></h4></a>
                     <div><?php

@@ -3,9 +3,10 @@
 
 <div class="list">
     <?php
+        $page = $_GET['name'];
         include('../fonctions/entrepriseSolo.php');
         $entreprises = new infoEntreprise($conn);
-        foreach($entreprises->getAll() as $entreprise) {
+        foreach($entreprises->getAll($page) as $entreprise) {
             $name = $entreprise['name_company'];
             $description = $entreprise['description_company'];
             $id = $entreprise['id_company'];

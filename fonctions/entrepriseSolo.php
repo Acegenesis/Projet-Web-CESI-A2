@@ -6,8 +6,8 @@ class infoEntreprise {
         $this->conn = $conn;
     }
 
-    function getAll() {
-        $stmt = $this->conn->prepare("SELECT * FROM company JOIN address ON company.id_address = address.id_address WHERE id_company = 2;");
+    function getAll($page) {
+        $stmt = $this->conn->prepare("SELECT * FROM company JOIN address ON company.id_address = address.id_address WHERE name_company = '$page';");
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;

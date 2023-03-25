@@ -1,4 +1,4 @@
-<div class="itemList" style="height: <?php echo ($a === 0) ? '300px' : '500px' ?>" <?php echo "id = 'item_" . $id . "'"?>>
+<div class="itemList" style="height: <?php echo ($a === 0) ? '300px' : '600px' ?>" <?php echo "id = 'item_" . $id . "'"?>>
     
     <img src= <?php echo $image; ?> alt  ="">
     <div class="itemText" id="block">
@@ -18,21 +18,42 @@
         <br>
         <div class="itemTitle">
             <span>
-                    <a href=""><h4>Stagiaire CESI déjà acceptés: <?php echo $nb_accepted ?></h4></a>
+                    <a href=""><h4>Stagiaire CESI déjà acceptés: </h4></a>
             </span>
-            
+        </div>
+        <div class="itemTitle">
+            <span>
+        <h4><?php echo $nb_accepted ?></h4>
+            </span>
         </div>
         
+
         <div class="itemTitle">
             <span>
-                    <a href=""><h4>Secteur d'activité: <?php echo $secteur ?></h4></a>
+                    <a href=""><h4>Secteur d'activité: </h4></a>
             </span>
         </div>
+
         <div class="itemTitle">
             <span>
-                    <a href=""><h4>Contact: <?php echo $mail ?></h4></a>
+        <h4><?php echo $secteur ?></h4>
             </span>
         </div>
+
+        <div class="itemTitle">
+            <span>
+                    <a href=""><h4>Contact:</h4></a>
+            </span>
+        </div>
+
+
+        <div class="itemTitle">
+            <span>
+        <h4><?php echo $mail ?></h4>
+            </span>
+        </div>
+
+
         <div class="itemTitle">
             <span>
                     <a href=""><h4>Adresse:</h4></a>
@@ -41,12 +62,14 @@
         </div>
         <p>
             <?php echo ($a === 0) ? $adress : $adress;?>
-        
             <?php echo ($a === 0) ? $ville : $ville;?>
             <?php echo ($a === 0) ? $pays : $pays; ?>
+            <?php echo ($a === 0) ? $name : $name; ?>
+
+
         <p>
         <br>
-        <h3>Avis:</h3>
     </div>
+
 
     
