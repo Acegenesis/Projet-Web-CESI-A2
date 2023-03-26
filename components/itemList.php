@@ -1,10 +1,9 @@
 <div class="itemList" style="height: <?php echo ($a === 0) ? '300px' : '200px' ?>" <?php echo "id = 'item_" . $id . "'"?>>
-    
     <img src= <?php echo $image; ?> alt  ="">
     <div class="itemText">
         <div class="itemTitle">
             <span>
-                <a href="../pages/entreprise.php?name=<?php echo $name ?>" class="name"><h3><?php echo ($a === 0)  ? $title :  $name ?></h3></a>
+                <a href="<?php echo ($a === 0) ? '' : '../pages/entreprises.php?id=' . $id ?>" class="name"><h3><?php echo ($a === 0)  ? $title :  $name ?></h3></a>
                 <?php if($a === 0 ) : ?>
                     <a href=""><h4><?php echo $entreprise ?></h4></a>
                     <div><?php

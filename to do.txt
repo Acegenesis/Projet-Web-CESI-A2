@@ -3,3 +3,5 @@ MCV : 1 fichier query 1 fichier front 1 fichier controleur qui fait interragir l
 cacher créer un compte si le mec est etudiant
 
 REU SCRUM LUNDI + MATTEO FAIT LE PWA "inchallah"
+
+bouton deconnexion

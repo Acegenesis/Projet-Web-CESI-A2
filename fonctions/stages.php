@@ -14,6 +14,13 @@ class Stage {
         return $result;
     }
 
+    function getForEnterprise($id) {
+        $stmt = $this->conn->prepare("SELECT * FROM internship JOIN company ON internship.id_company = company.id_company LEFT JOIN requires ON internship.id_internship = requires.id_internship WHERE company.id_company = $id GROUP BY internship.id_internship;");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     function getNumber() {
         $stmt = $this->conn->prepare("SELECT COUNT(*) FROM internship;");
         $stmt->execute();
