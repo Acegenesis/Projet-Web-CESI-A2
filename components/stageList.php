@@ -6,7 +6,7 @@
         if ($terme == ""){
 
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $limit = 3;
+        $limit = 4;
         $offset = $limit * ($page - 1);
         $stages = new Stage($conn);        
         $total = $stages->getNumber()[0]['COUNT(*)'];

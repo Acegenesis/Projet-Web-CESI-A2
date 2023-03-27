@@ -58,11 +58,9 @@
                 </p>
             </div>
         </div>
-        <?php
-      if(isset($_POST['bt_postuler'])) {
-          echo "This is Button1 that is selected";
-      }?>
-        <form method="post">
-            <input type="submit" name="bt_postuler" class="button" value="Postuler" />
-        </form>
+        <?php 
+        $p = new Stage($conn);
+        $pa = $p->getPost($_COOKIE['id'], $id );
+        ?>
+        <span id="int_<?php echo $id ?>" class="<?php (!$pa) ? 'interested' : '' ?> btn"><?php echo (!$pa) ? 'Postuler maintenant': 'Je ne suis plus interressé' ?></span>
 </div>

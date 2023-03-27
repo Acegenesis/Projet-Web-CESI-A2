@@ -7,6 +7,7 @@
             <li><a href="../pages/entreprises.php">Entreprises</a></li>
             <li><a href="../pages/fav.php">Favoris</a></li>
             <li><a href="../pages/contact.php">Nous contacter</a></li>
+            <li><a href="../pages/gestion.php">Gestion</a></li>
         </ul>
         <a href="../pages/user.php">
 

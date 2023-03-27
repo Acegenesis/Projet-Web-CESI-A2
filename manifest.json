@@ -1,0 +1,22 @@
+{
+    "name": "CTS",
+    "short_name": "CTS",
+    "description": "Pour trouver les meilleurs stages :)",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#0072c6",
+    "icons": [
+      {
+        "src": "../assets/img/logoSquare.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "../assets/img/logoSquare.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

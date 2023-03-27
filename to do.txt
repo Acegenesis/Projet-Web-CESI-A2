@@ -2,17 +2,6 @@
 
 onclick="checkPasswordMatch()"
 Dans le cadre de votre projet web, différents éléments seront évalués le jour de la soutenance (Livrable : Site avec BDD, Livrable : Site web finalisé (front) et Livrable : Accès mobile) 
-
-Le détail de ces différents livrables est décrit ci-dessous.
-
-Livrable : Site avec BDD (back)
-
-
-	
- VirtualHost : Utilisation d’un hôte virtuel pour héberger le site sous Apache
- ?? c'est bon 
-	
- .htaccess : Utilisation d’un fichier .htaccess pour protéger le site (ou une partie) avec login et mot de passe
 	
 	
  Authentification : L’utilisateur doit s’identifier pour accéder aux contenus, avec des droits spécifiques pour chaque rôle

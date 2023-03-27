@@ -18,6 +18,7 @@
     <div>
         <p>Nom : <?php echo $name; ?></p>
         <p>Prénom : <?php echo $surname; ?></p>
+        <p>Statut : <?php echo $current['status']; ?></p>
         <p>Promotion : <?php echo $address['name_promotion']; ?></p>
         <p>Campus : <?php echo $address['name_campus']; ?></p>
         <p>Adresse : <?php echo $address['address'] . ' ' . $address['city'] . ' ' . $address['country']; ?></p>

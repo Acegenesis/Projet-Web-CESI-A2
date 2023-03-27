@@ -3,7 +3,6 @@
     if (!isset($_COOKIE['id'])) : 
         include('../components/sign.php');
     else :
-      include('../components/header.php');
       include('../components/navBar.php');
       include('../fonctions/user.php');
 ?>

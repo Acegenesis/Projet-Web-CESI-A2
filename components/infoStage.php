@@ -20,6 +20,6 @@
         } else {
             $skill = [];
         }
-        include('../components/itemSolo2.php');
+        include('../components/itemSoloStage.php');
     ?>
 </div>

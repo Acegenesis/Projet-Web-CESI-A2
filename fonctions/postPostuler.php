@@ -1,9 +1,8 @@
 <?php
     include 'bdd.php';
-    include 'postuler.php';
-    $users = $_POST['users'];
-    $internship = $_COOKIE['internship'];
-    $post = new Postuler($conn);
-    $post->addPost($users, $internship);
-    header('Location: /pages/stages.php?id='.$id);
+    include 'stages.php';
+    $id_users = $_COOKIE['id_users'];
+    $id_internship = $_POST['id_internship'];
+    $post = new stage($conn);
+    $post->addPost($id_users, $id_internship);
 ?>

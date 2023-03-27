@@ -1,2 +1,13 @@
 RewriteEngine On
 ReWriteRule ^$ pages/index.php
+
+AuthType Basic
+AuthName "CTS"
+AuthUserFile ../.htpasswd
+
+
+# Require valid-user
+#order allow,deny
+#allow from all
+#deny from 92.148.233.250
+

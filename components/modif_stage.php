@@ -14,7 +14,7 @@
     <h3>durée (en semaines) </h3>
     <input type="number" name="durée" id="durée" placeholder="">
         
-    <h3>Places</h3>
+    <h3>Place</h3>
     <input type="number" name="Places" id="Places" placeholder="">
     
     <h3>Date de début</h3>
@@ -22,9 +22,19 @@
     
     <h3>Entreprise</h3>
     <select id="entreprise" name = "entreprise">
-  <option value="testy">Valeur 1</option>
-  <option value="valeur2" selected>Valeur 2</option>
-  <option value="valeur3">Valeur 3</option>
+    <?php 
+   $entreprises = new entreprise($conn);
+   $entreprises_list = $entreprises->getAll();
+   
+    foreach($entreprises_list as $entreprise) {
+            $id_company = $entreprise['id_company'];
+            $name = $entreprise['name_company'];
+            ?>
+            <option value="<?php echo "$id_company"; ?>"><?php echo "$name" ?></option>
+            
+       <?php } ?>
+
+  
   </select>    
   <br>
 
@@ -32,7 +42,6 @@
 
     </form>
 </div>
-
 
 
 

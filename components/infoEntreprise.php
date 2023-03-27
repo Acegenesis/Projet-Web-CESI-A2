@@ -16,6 +16,6 @@
         $address = $entreprise['address'];
         $city = $entreprise['city'];
         $country = $entreprise['country'];
-        include('../components/itemSolo.php');
+        include('../components/itemSoloEntreprise.php');
     ?>
 </div>
