@@ -3,7 +3,7 @@
     <div class="itemText">
         <div class="itemTitle">
             <span>
-                <a href="<?php echo ($a === 0) ? '' : '../pages/entreprises.php?id=' . $id ?>" class="name"><h3><?php echo ($a === 0)  ? $title :  $name ?></h3></a>
+                <a href="<?php echo ($a === 0) ? '../pages/stages.php?id=' . $id : '../pages/entreprises.php?id=' . $id ?>" class="name"><h3><?php echo ($a === 0)  ? $title :  $name ?></h3></a>
                 <?php if($a === 0 ) : ?>
                     <a href=""><h4><?php echo $entreprise ?></h4></a>
                     <div><?php
@@ -23,5 +23,5 @@
             <?php echo ($a === 0) ? $description : $description ?>
         </p>
     </div>
-    <?php include("like.php") ?>
+    <?php ($a ==0) ? include("like.php") : '' ?>
 </div>

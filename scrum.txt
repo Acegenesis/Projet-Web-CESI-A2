@@ -1,0 +1,57 @@
+Livrable : Site avec BDD (back)
+
+
+	
+VirtualHost : Utilisation d’un hôte virtuel pour héberger le site sous Apache O
+	
+.htaccess : Utilisation d’un fichier .htaccess pour protéger le site (ou une partie) avec login et mot de passe O
+	
+Conception de la BDD : MCD (ce point a été évalué le mardi 07/03) 1
+	
+Authentification : L’utilisateur doit s’identifier pour accéder aux contenus, avec des droits spécifiques pour chaque rôle 0,5
+	
+Contrôle de champs : Le contrôle des champs des formulaires est vérifié côté backend avant requêtes 0
+	
+Moteur de template : utilisation d'un moteur de template sur tout le site. Bon usage des fonctions offertes par le moteur (boucles, etc...) 0
+	
+Abstraction de connexion à la BDD : Utilisation d’une couche d’abstraction comme PDO 1
+	
+Conformité du code aux conventions PSR : Le code PHP est conforme à un point pris au hasard dans les recommandations PSR 12, par exemple le point 4.    https://www.php-fig.org/psr/psr-12/ 0
+	
+Conformité POO : Le code est en POO 1
+	
+MVC : L’application respecte une architecture MVC 0
+	
+Sécurité Cookie : Les informations de connexion sont dans des cookies. Les mots de passe ne sont pas en clair. 0
+	
+
+
+Livrable : Site web finalisé (front)
+
+HTML /W3C :  A VERIFIER
+	
+
+		
+Le code HTML est composé de balises sémantiques 1
+		
+Les bonnes pratiques de codage HTML sont respectées 1
+		
+Le résultat du validateur HTML (W3C) est cohérent 0
+	 
+	
+	
+CSS : le code CSS est bien structuré et cohérent 1
+	
+Responsive design : Le site s’adapte à la taille de l’écran MAXIME 
+	
+Affichage dynamique (AJAX) : Au moins une des pages du site contient des données chargées en AJAX 0
+	
+Pagination : les données sont paginées 1
+	
+ Choix de 6 fonctionnalités parmi celles imposées par le CdC (se référer aux SFx) (l’évaluateur choisira 6 fonctionnalités du CdC pour vérifier qu’elles sont fonctionnelles) ?????????
+	
+ Législation : Le site contient des mentions légales 1 
+
+
+Livrable : Accès mobile la validation de ces différents éléments est soit oui soit non MATTEO
+

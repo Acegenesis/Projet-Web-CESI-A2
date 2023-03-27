@@ -8,3 +8,6 @@ Projet WEB de :
 
 browser-sync start --proxy "localhost" --files "*/*/*.*" "*/*.*" --browser "chrome"
  
+ DB : 
+ http://localhost/phpmyadmin/#
+

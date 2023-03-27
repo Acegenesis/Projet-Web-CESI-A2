@@ -35,5 +35,21 @@ class Entreprise {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    function getPost($id) {
+        $stmt = $this->conn->prepare("SELECT comments, login, image_users,rating  FROM company JOIN review ON company.id_company = review.id_company JOIN users ON review.id_users = users.id_users WHERE company.id_company = $id;");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    function addPost($id_users, $id_company, $comments, $rating) {
+        $stmt = $this->conn->prepare('INSERT INTO review (id_company, id_users, comments, rating) VALUES (:id_company, :id_users, :comments, :rating)');
+        $stmt->bindParam(':id_company', $id_company);
+        $stmt->bindParam(':id_users', $id_users);
+        $stmt->bindParam(':comments', $comments);
+        $stmt->bindParam(':rating', $rating);
+        $stmt->execute();
+    }
 }
 

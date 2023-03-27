@@ -1,11 +1,13 @@
-<?php 
-include('../components/header.php');
-include('../components/navBar.php');
-include('../fonctions/user.php');
+<?php
+    include('../components/header.php');
+    if (!isset($_COOKIE['id'])) : 
+        include('../components/sign.php');
+    else :
+      include('../components/header.php');
+      include('../components/navBar.php');
+      include('../fonctions/user.php');
 ?>
-
-<body class="legal">
-  <div class="container">
+  <div class="itemSolo">
     <h1>Mentions légales</h1>
     <ul>
       <li><strong>Cesi Ton Stage</strong></li>
@@ -39,11 +41,7 @@ include('../fonctions/user.php');
       <li>Nous nous réservons le droit de modifier nos termes et conditions générales d'utilisation à tout moment.</li>
     </ul>
   </div>
-</body>
-</html>
-
-
-
 <?php
 include('../components/footer.php');
+endif;
 ?>
