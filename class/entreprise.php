@@ -51,5 +51,42 @@ class Entreprise {
         $stmt->bindParam(':rating', $rating);
         $stmt->execute();
     }
+    function addadress($adresse,$country,$ville) {
+        if ($adresse == "" || $country == "" || $ville == "" ) {
+        echo "remplissez tous les champs svp";
+        }
+        else{
+        $stmt = $this->conn->prepare("INSERT INTO address (address,country,city) VALUES (:adresse,:country,:id_promotion)");
+        $stmt->bindParam(':adresse', $adresse);
+        $stmt->bindParam(':country', $country);
+        $stmt->bindParam(':id_promotion', $ville);
+
+        $stmt->execute();
+    }
+    }
+
+    function getLastAdress() {
+        $stmt = $this->conn->prepare("SELECT id_address FROM address ORDER BY id_address DESC LIMIT 1;");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    function addCompany($nom, $description,$accStagiaires,$activity,$mail,$idAdress) {
+        if ($nom == "" || $description == "" || $accStagiaires == "" || $activity == ""|| $mail == ""|| $idAdress == "" ) {
+        echo "remplissez tous les champs svp";
+        }
+        else{
+        $stmt = $this->conn->prepare("INSERT INTO company  (description_company,accepted,name_company,activity,mail,id_address)VALUES (:description,:accStagiaires,:nom,:activity,:mail,:idAdress)");
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':accStagiaires', $accStagiaires);
+        $stmt->bindParam(':activity', $activity);
+        $stmt->bindParam(':mail', $mail);
+        $stmt->bindParam(':idAdress', $idAdress);
+
+
+        $stmt->execute();
+    }
+    }
 }
 

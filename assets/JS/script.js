@@ -63,13 +63,19 @@ $(document).ready(function() {
   $('[id^="validate_"]').click(function() {
     var id = $(this).attr('id');
     var num = id.substring(9);
-    var nom = "2";
+    var prenom = $('[name="name"]').val();
+    var surnom = $('[name="surname"]').val();
+    var nom = prenom + '.' + surnom;
+    var campus = $('[name="campus"]').val();
+    var promo = $('[name="promo"]').val();
     $.ajax({
       type: "POST",
       url: "../fonctions/upTuteur.php",
       data: { 
         num: num,
-        nom: nom
+        nom: nom,
+        campus: campus,
+        promo: promo
       }
     });
   });

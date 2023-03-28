@@ -19,26 +19,33 @@
                 <input type="text" name="surname" value="<?php echo $surname; ?>">
             </span>
             <span>
+                <label for="promo">Promotion</label>
+                <select name="promo" id="promo">
+                    <?php
+                        $promos = $users->getPromotion();
+                        foreach($promos as $promo) {
+                            if ($promo['name_promotion'] === $promotion) {
+                                echo '<option selected>'.$promo['name_promotion'].'</option>';
+                            } else {
+                                echo '<option>' . $promo['name_promotion'] . '</option>';             
+                            }
+                        }
+                    ?>
+                </select>
+            <span>
                 <label for="campus">Campus</label>
                 <select name="campus" id="campus">
-                    <option name="campus"><?php echo $campus; ?></option>
+                    <?php
+                        $campuses = $users->getCampus();
+                        foreach($campuses as $campus) {
+                            if ($campus['name_campus'] === $camp) {
+                                echo '<option name="campus" selected>'.$campus['name_campus'].'</option>';
+                            } else {
+                                echo '<option name="campus">' . $campus['name_campus'] . '</option>';             
+                            }
+                        }
+                    ?>
                 </select>
-            </span>
-            <span>
-                <label for="address">Address </label>
-                <p><?php echo $address; ?></p>
-            </span>
-            <span>
-                <label for="city">City</label>
-                <p><?php echo $city; ?></p>
-            </span>
-            <span>
-                <label for="country">Country</label>
-                <p><?php echo $country; ?></p>
-            </span>
-            <span>
-                <label for="img">Image</label>
-                <input type="file" name="img" value="<?php echo $image; ?>">
             </span>
         </div>
         <div>

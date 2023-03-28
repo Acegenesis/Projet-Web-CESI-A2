@@ -1,17 +1,24 @@
 <form  class="" method="POST">
     <h1 class="title">Ajouter un stage :</h1>
+
     <label for="nom">Nom du stage :</label>
     <input type="text" name="nom" id="nom" placeholder="Ecrire le nom du stage ...">
+    <br>
     <label for="description">Description :</label>
     <input type="text" name="description" id="description" placeholder="Ecrire la description du stage ...">
+    <br>
     <label for="rémunération">Rémunération (en euros) :</label>
     <input type="number" name="rémunération" id="rémunération" min="0" step="0.5" placeholder="500">
+    <br>
     <label for="durée">Durée (en jours) :</label>
-    <input type="number" name="durée" id="durée" min="1" placeholder="30">   
+    <input type="number" name="durée" id="durée" min="1" placeholder="30">
+    <br>  
     <label for="Places">Nombre de places :</label>
     <input type="number" name="Places" id="Places" min="1" placeholder="10">
+    <br>
     <label for="Date">Date :</label>
     <input type="Date" name="Date" id="Date">
+    <br>
     <label for="entreprise">Entreprise :</label>
     <select id="entreprise" name = "entreprise">
         <?php 
@@ -26,6 +33,7 @@
                     ?>
                     <option value="<?php echo "$id_company"; ?>"><?php echo "$name" ?></option>     
         <?php } ?>
+        <br>
     </select>
     <h3 for="skill" class="skills">Compétences :</h3>
     <?php 
@@ -38,5 +46,6 @@
             <label for="<?php echo $idSkill ?>"><?php echo $nameSkill ?></label>
         </span>
     <?php };?>
-   <input type="submit" value="chercher" name="s" />
+    <br>
+   <input type="submit" value="Ajouter un stage" name="s" />
 </form>   

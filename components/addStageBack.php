@@ -20,22 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		}
 	};
 	
-	
-		
-
-
-	//echo $nom." ";
-	//echo $description." ";
-	//echo $remuneration." ";
-	//echo $duree." ";
-	//echo $places." ";
-	//echo $date_post." ";
-	//echo $date_stage." ";
-	
-	//echo $entreprise." ";
-	//print_r( $competence);
-
-	
 
 	$stages = new Stage($conn);
 	$stages->addStage($nom,$description,$places,$duree,$remuneration,$date_post,$date_stage,$entreprise);

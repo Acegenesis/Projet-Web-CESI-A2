@@ -6,7 +6,6 @@
         $b = 1;
         if (!isset($_GET['id'])) :
                 include('../components/basic/navbar.php');
-                include('../components/op_stage.php');
                 $a = 0;
                 include('../components/basic/search.php');
                 include('../components/stages/stageList.php');
@@ -14,7 +13,6 @@
         else :
             $b = 2;
             include('../components/basic/navbar.php');
-            include('../components/op_stage.php');
             include('../components/stages/infoStage.php');
             include('../components/basic/footer.php');
         endif;

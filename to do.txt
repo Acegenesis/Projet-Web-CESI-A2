@@ -9,8 +9,7 @@ en cours
 
 
  Contrôle de champs : Le contrôle des champs des formulaires est vérifié côté backend avant requêtes 
-- validation backend php (par exemple check si l'adresse mail entrée existe dans la BDD)	
-
+- validation backend php (par exemple check si l'adresse mail entrée existe dans la BDD)
 
  Moteur de template : utilisation d'un moteur de template sur tout le site. Bon usage des fonctions offertes par le moteur (boucles, etc...)
 ON A pas

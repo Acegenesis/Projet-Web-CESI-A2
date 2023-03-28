@@ -1,5 +1,5 @@
 <?php $a = 2; ?>
-<a href="../pages/studentAdd.php" class="name"><h3>ajouter nouvel eleve KC FAUT AJOUTER LE BON FICHIER</h3></a>
+<a href="../pages/studentAdd.php" class="name"><h3>ajouter nouvel eleve </h3></a>
 
 <div class="list">
     <?php  

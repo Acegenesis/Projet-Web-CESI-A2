@@ -1,5 +1,5 @@
 <?php 
-include('../class/gestions.php');
+include('../class/entreprise.php');
 
 include('../components/addCompany.php');
 
@@ -16,19 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	
 	};
 	
-	//echo $nom." ";
-	//echo $description." ";
-	//echo $remuneration." ";
-	//echo $duree." ";
-	//echo $places." ";
-	//echo $date_post." ";
-	//echo $date_stage." ";
-	
-	//echo $entreprise." ";
-	//print_r( $competence);
 
-	
-
-	$company = new Gestion($conn);
-	$company->addCompany($nom, $description,$accStagiaires,$activity,$mail);
+	$company = new Entreprise($conn);
+	@$company->addadress($adresse,$country,$ville);
+	$adress = $company->getLastAdress(); 
+	$idAdress = $adress['0']['id_address'];
+	@$company->addCompany($nom, $description,$accStagiaires,$activity,$mail,$idAdress);
+	echo "requete effectue";
 ?>
