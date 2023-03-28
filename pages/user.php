@@ -1,11 +1,10 @@
 <?php
-    include('../components/header.php');
+    include('../components/basic/header.php');
     if (!isset($_COOKIE['id'])) : 
-        include('../components/sign.php');
+        include('../components/basic/sign.php');
     else :
-        include('../components/header.php');
-        include('../components/navBar.php');
-        include('../fonctions/user.php');
+        include('../components/basic/navBar.php');
+        include('../class/user.php');
         $cuser = new User($conn);
         $current = $cuser->getUser($_COOKIE['id']);
         $name = explode('.', $current['login'])[0];
@@ -35,11 +34,11 @@
     </span>
 </div>
 <div class="logout">
-    <button id="logoutBtn" onclick="location.href='logout.php'">LOG OUT</button>
+    <button id="logoutBtn" onclick="location.href='../fonctions/logout.php'">LOG OUT</button>
 </div>
 <script src="../assets/JS/filetype.js"></script>
 
 <?php
-include('../components/footer.php');
+include('../components/basic/footer.php');
 endif;
 ?>

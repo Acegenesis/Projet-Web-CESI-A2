@@ -1,9 +1,9 @@
 <?php
-    include('../components/header.php');
+    include('../components/basic/header.php');
     if (!isset($_COOKIE['id'])) : 
-        include('../components/sign.php');
+        include('../components/basic/sign.php');
     else :
-      include('../components/navBar.php');
+      include('../components/basic/navBar.php');
       include('../fonctions/user.php');
 ?>
   <div class="itemSolo">
@@ -41,6 +41,6 @@
     </ul>
   </div>
 <?php
-include('../components/footer.php');
+include('../components/basic/footer.php');
 endif;
 ?>

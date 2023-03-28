@@ -49,4 +49,28 @@ $(document).ready(function() {
       });
     }
   });
+  $('[id^="tuteur_"]').click(function() {
+    var id = $(this).attr('id');
+    var num = id.substring(7);
+    if($('#drop_' + num ).hasClass('dropped')) {
+      $(this).css("transform", "rotate(180deg)");
+      $('#drop_' + num ).removeClass('dropped');
+    } else {
+      $(this).css("transform", "rotate(0deg)");
+      $('#drop_' + num ).addClass('dropped');
+    } 
+  });
+  $('[id^="validate_"]').click(function() {
+    var id = $(this).attr('id');
+    var num = id.substring(9);
+    var nom = "2";
+    $.ajax({
+      type: "POST",
+      url: "../fonctions/upTuteur.php",
+      data: { 
+        num: num,
+        nom: nom
+      }
+    });
+  });
 });

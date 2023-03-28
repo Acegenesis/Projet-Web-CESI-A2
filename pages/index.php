@@ -1,12 +1,13 @@
 <?php
-    include('../components/header.php');
+    include('../components/basic/header.php');
     if (!isset($_COOKIE['id'])) : 
-        include('../components/sign.php');
+        include('../components/basic/sign.php');
     else :
-        include('../components/navBar.php');
+        include('../components/basic/navBar.php');
         $user = $_COOKIE['user'];
         $a = 0;
-        include('../components/stageList.php');
-        include('../components/footer.php');
+        include('../components/basic/search.php');
+        include('../components/stages/stageList.php');
+        include('../components/basic/footer.php');
     endif;
 ?>

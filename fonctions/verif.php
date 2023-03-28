@@ -1,5 +1,5 @@
 <?php
-include '../components/header.php';
+include '../components/basic/header.php';
 if (isset($_POST['user']) && isset($_POST['password'])) {
     $user = $_POST['user'];
     $password = hash('sha256', $_POST['password']);
@@ -20,5 +20,5 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
         header('Location: /');
     }
 } 
-include '../components/footer.php';
+include '../components/basic/footer.php';
 ?>  

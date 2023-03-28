@@ -1,14 +1,14 @@
 <?php
-    include('../components/header.php');
+    include('../components/basic/header.php');
     if (!isset($_COOKIE['id'])) : 
-        include('../components/sign.php');
+        include('../components/basic/sign.php');
     else :
-        include('../components/navbar.php');
+        include('../components/basic/navbar.php');
         $a = 0;
-        include('../components/search.php'); ?>
+        include('../components/basic/search.php'); ?>
         <div class="list">
             <?php
-                include('../fonctions/stages.php');
+                include('../class/stages.php');
                 $stages = new Stage($conn);
                 foreach($stages->getAllFav($_COOKIE['id']) as $stage) {
                     $title = $stage['title_internship'];
@@ -21,11 +21,11 @@
                     }else {
                         $skill = [];
                     }
-                    include('../components/itemList.php');
+                    include('../components/general/itemList.php');
                 }
             ?>
         </div>
     <?php 
-        include('../components/footer.php');
+        include('../components/basic/footer.php');
     endif;
  ?>

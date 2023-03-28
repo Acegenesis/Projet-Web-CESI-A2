@@ -1,5 +1,5 @@
-<?php include '../components/header.php'; ?>
-<?php include '../components/navbar.php'; ?>
+<?php include '../components/basic/header.php'; ?>
+<?php include '../components/basic/navbar.php'; ?>
 
 <div class="itemSolo comments">
 <form id=sfx action="" method="post" action="../fonctions/create.php">

@@ -1,25 +1,22 @@
 <?php
-    include('../components/header.php');
+    include('../components/basic/header.php');
     if (!isset($_COOKIE['id'])) : 
-        include('../components/sign.php');
+        include('../components/basic/sign.php');
     else :
-        $b = 0;
+        $b = 1;
         if (!isset($_GET['id'])) :
-            $b = 1;
-            include('../components/navbar.php');
-
-            include('../components/op_stage.php');
-
-            include('../components/stageList.php');
-            include('../components/footer.php');
+                include('../components/basic/navbar.php');
+                include('../components/op_stage.php');
+                $a = 0;
+                include('../components/basic/search.php');
+                include('../components/stages/stageList.php');
+                include('../components/basic/footer.php');
         else :
             $b = 2;
-            include('../components/navbar.php');
-
+            include('../components/basic/navbar.php');
             include('../components/op_stage.php');
-
-            include('../components/infoStage.php');
-            include('../components/footer.php');
+            include('../components/stages/infoStage.php');
+            include('../components/basic/footer.php');
         endif;
     endif;
 ?>

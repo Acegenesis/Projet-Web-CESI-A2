@@ -1,14 +1,11 @@
 
     <?php if ($b == 1){?>
-        <a href="../pages/stage_modif.php" class="name"><h3>ajouter stage</h3></a>
+        <a href="../pages/stage_add.php" class="name"><h3>ajouter stage</h3></a>
 
-    
         <?php }
         else if ($b == 2){?>
-        <div class="itemSolo comments">
    
-        <input type="submit" value="supprimer stage">
+        <a href="../pages/stage_add.php" class="name"><h3>modifier stage</h3></a>
 
-        <input type="submit" value="modifier stage">
+        <a href="../pages/stage_add.php" class="name"><h3>delete stage</h3></a>
         <?php }; ?>
-        </div>

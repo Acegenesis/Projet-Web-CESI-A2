@@ -1,9 +1,9 @@
 <?php
-    include('../components/header.php');
+    include('../components/basic/header.php');
     if (!isset($_COOKIE['id'])) : 
-        include('../components/sign.php');
+        include('../components/basic/sign.php');
     else :
-        include('../components/navbar.php');
+        include('../components/basic/navbar.php');
 ?>
     <div id="contact">
         <h1>A propos de nous</h1>
@@ -28,6 +28,6 @@
         <li>contact@cts.fr</li>
     </div>
 <?php 
-    include('../components/footer.php');
+    include('../components/basic/footer.php');
     endif;
 ?>

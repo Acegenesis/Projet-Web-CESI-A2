@@ -1,11 +1,11 @@
 <?php $a = 2; ?>
-<a href="../pages/TuteurAdd.php" class="name"><h3>ajouter nouveau tuteur</h3></a>
+<a href="../pages/studentAdd.php" class="name"><h3>ajouter nouvel eleve KC FAUT AJOUTER LE BON FICHIER</h3></a>
 
 <div class="list">
     <?php  
         include ('../class/gestions.php');
         $gestion = new Gestion($conn);        
-        $list = $gestion->getTuteur();
+        $list = $gestion->getEleve();
 
         foreach($list as $user) {
             $id = $user['id_users'];
@@ -18,8 +18,8 @@
             $city = $user['city'];
             $status = $user['status'];
             $image = $user['image_users'];
-            include('../components/general/itemListTuteur.php');
+
+            include('../components/general/itemListEleve.php');
         }
     ?>
 </div>
-
