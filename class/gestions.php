@@ -33,13 +33,15 @@ class Gestion {
         return $result;
     }
 
-    function updateTuteur($id, $login, $campus, $image_users) {
-        $stmt = $this->conn->prepare("UPDATE users SET login = :login, name_campus = :name_campus, image_users = :image_users WHERE id = :id");
+    function updateTuteur($id, $login, $id_promotion) {
+        $stmt = $this->conn->prepare("UPDATE users 
+        JOIN promotion ON users.id_promotion = promotion.id_promotion
+        SET login = :login, id_promotion = :id_promotion WHERE id = :id;");
         $stmt->execute();
     }
 
-    function updateEleve($id, $login, $campus, $image_users) {
-        $stmt = $this->conn->prepare("UPDATE users SET login = :login, name_campus = :name_campus, image_users = :image_users WHERE id = :id");
+    function updateEleve($id, $login, $id_promotion) {
+        $stmt = $this->conn->prepare("UPDATE users SET login = :login, id_promotion = :id_promotion WHERE id = :id;");
         $stmt->execute();
     }
 
@@ -63,18 +65,7 @@ class Gestion {
         $stmt->execute();
     }
 
-    function addTutor($login, $password, $id_promotion) {if ($login == "" || $password == "" || $id_promotion == "" ) {
-        echo "remplissez tous les champs svp";
-        }
-        else{
-        $stmt = $this->conn->prepare("INSERT INTO users (login, password,status, id_promotion) VALUES (:login, :password, 'Tuteur', :id_promotion)");
-        $stmt->bindParam(':login', $login);
-        $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':id_promotion', $id_promotion);
-
-        $stmt->execute();
-    }
-    }
+ 
 
     function addStudent($login, $password, $id_promotion) {if ($login == "" || $password == "" || $id_promotion == "" ) {
         echo "remplissez tous les champs svp";
@@ -88,34 +79,7 @@ class Gestion {
         $stmt->execute();
     }
     }
-
-    function addCompany($login, $password, $id_promotion) {
-        if ($login == "" || $password == "" || $id_promotion == "" ) {
-        echo "remplissez tous les champs svp";
-        }
-        else{
-        $stmt = $this->conn->prepare("INSERT INTO users (login, password,status, id_promotion) VALUES (:login, :password, 'eleve', :id_promotion)");
-        $stmt->bindParam(':login', $login);
-        $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':id_promotion', $id_promotion);
-
-        $stmt->execute();
-    }
-    }
-
-    function addadress($login, $password, $id_promotion) {
-        if ($login == "" || $password == "" || $id_promotion == "" ) {
-        echo "remplissez tous les champs svp";
-        }
-        else{
-        $stmt = $this->conn->prepare("INSERT INTO users (login, password,status, id_promotion) VALUES (:login, :password, 'eleve', :id_promotion)");
-        $stmt->bindParam(':login', $login);
-        $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':id_promotion', $id_promotion);
-
-        $stmt->execute();
-    }
-    }
+  
 
     function getPromotion() {
         $stmt = $this->conn->prepare("SELECT * FROM promotion JOIN campus ON promotion.id_campus = campus.id_campus JOIN address ON campus.id_address = address.id_address;");
