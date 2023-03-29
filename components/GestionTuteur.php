@@ -1,14 +1,22 @@
 <?php $a = 2; 
-?>
-<div class="gestionBtn"><a href="../pages/TuteurAdd.php">Ajouter nouveau tuteur</a></div>
 
+if ($terme == ""){ 
+    ?>
+<div class="gestionBtn"><a href="../pages/TuteurAdd.php">Ajouter nouveau tuteur</a></div>
+<?php }?>
 <div class="list">
     <?php  
         include ('../class/user.php');
-        
+        if ($terme == ""){
             $users = new User($conn);        
             $list = $users->getTuteur();
-        
+        }
+        else
+        {
+            $search = 1;
+            $stages = new search($conn);
+            $list = $stages->getperson($terme);
+        }  
                 
         foreach($list as $user) {
             $id = $user['id_users'];
@@ -16,6 +24,7 @@
             $surname = explode('.', $user['login'])[1];
             $promotion = $user['name_promotion'];
             $camp= $user['name_campus'];
+            
             include('../components/general/itemListTuteur.php');
         }
     ?>

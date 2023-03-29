@@ -7,6 +7,7 @@ Projet WEB de :
 ### USE THIS TO SHARE THE LOCALHOST
 
 
+browser-sync start --proxy "localhost" --files "*/*/*.*" "*/*.*" --browser "chrome"
 
  
  DB : 

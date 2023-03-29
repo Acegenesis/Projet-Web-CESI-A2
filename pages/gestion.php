@@ -12,11 +12,14 @@
 
             <div class="gestionBtn">
                 <?php if($_COOKIE['status'] == 'Tuteur') : ?>
+                    <a href="?type=recherche">recherche etudiants et pilotes</a>
                     <a href="?type=students">Gestion des étudiants</a>
                     <a href="?type=entreprises">Gestion des entreprises</a>
                     <a href="?type=stages">Gestion des stages</a> 
+
                 <?php else: ?>
-                    
+                    <a href="?type=recherche">recherche etudiants et pilotes</a>
+
                     <a href="?type=tuteurs">Gestion des tuteurs</a>
                     <a href="?type=students">Gestion des étudiants</a>
                     <a href="?type=entreprises">Gestion des entreprises</a>
@@ -32,41 +35,34 @@
                     if ($_COOKIE['status'] !== 'admin') {
                         header('Location: gestion.php');
                     }
-                    $a = 3;               
-                    include ('../components/basic/search.php');
+                    $a = 3;   
+                    $terme = "";         
                     include ('../components/GestionTuteur.php');             
                     
                 }
             elseif(isset($_GET['type']) && $_GET['type'] == 'students') :
                 $a = 4;
-                include ('../components/basic/search.php');
                 include ('../components/GestionEtudiant.php');
             elseif(isset($_GET['type']) && $_GET['type'] == 'entreprises') :
                 $a = 1;
-                include ('../components/basic/search.php');
                 include ('../components/GestionEntreprise.php');
             elseif(isset($_GET['type']) && $_GET['type'] == 'stages') :
                 $a = 6;
-                include ('../components/basic/search.php');
                 include ('../components/GestionStage.php');
+            elseif(isset($_GET['type']) && $_GET['type'] == 'recherche') :
+                    $a = 6;
+                    include ('../components/basic/search.php');
+                    
             elseif (isset($_GET["s"]) AND $_GET["s"] == "chercher"):
-
-                {   include ('../class/entreprise.php');
-                    include ('../class/stages.php');
-                    include ('../class/user.php');
-                    print_r($_GET["s"]);
+            {       $a = 3;
                     $_GET["search"] = htmlspecialchars($_GET["search"]);
                     $terme = $_GET["search"];
-                    $terme = trim($terme);
-                    $terme = strip_tags($terme);
-                    $stages = new Stage($conn);
+                   include ('../components/basic/search.php');
+                   
+                   include ('../components/GestionTuteur.php');             
 
-                    $users = new User($conn);
-                    $entreprise = new Entreprise($conn);
-                    $users->getTuteur();
-                    //$users->getEleve();
 
-                }
+            }
             endif;
             include('../components/basic/footer.php');
         } else {
