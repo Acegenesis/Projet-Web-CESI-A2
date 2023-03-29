@@ -1,7 +1,6 @@
 const cacheName = 'cts-pwa';
 const filesToCache = [
   './pages/index.php',
-  './',
   './assets/CSS/style.css',
   './assets/img/logoSquare.png',
   './manifest.json'
