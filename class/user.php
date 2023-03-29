@@ -28,6 +28,7 @@ class User {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+<<<<<<< Updated upstream
     
     function getPromotion() {
         $stmt = $this->conn->prepare("SELECT id_promotion, name_promotion FROM promotion GROUP BY name_promotion");
@@ -170,6 +171,21 @@ class User {
         }
     }
 
+=======
+
+    function addTutor($login, $password, $id_promotion) {if ($login == "" || $password == "" || $id_promotion == "" ) {
+        echo "remplissez tous les champs svp";
+        }
+        else{
+        $stmt = $this->conn->prepare("INSERT INTO users (login, password,status, id_promotion) VALUES (:login, :password, 'Tuteur', :id_promotion)");
+        $stmt->bindParam(':login', $login);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':id_promotion', $id_promotion);
+
+        $stmt->execute();
+    }
+    }
+>>>>>>> Stashed changes
 }
 
 
