@@ -1252,7 +1252,7 @@ p {
     font-weight: bold;
   }
 
-  .gestion form div span input[type="text"], .gestion form div span select, .gestion form div span textarea {
+  .gestion form div span input[type="text"], .gestion form div span select, .gestion form div span textarea, .gestion form div span input[type="date"], .gestion form div span input[type="number"] {
     border: 2px solid var(--primary-color);
     border-radius: 50px;
     padding: 10px;

@@ -150,5 +150,18 @@ class Stage {
         $stmt->bindParam(':id_internship', $id_internship);
         $stmt->execute();
     }
+
+    function updateStage($id,$name,$description,$places,$duree,$remuneration,$date_stage,$entreprise) {
+        $stmt = $this->conn->prepare("UPDATE internship SET title_internship = :nom, description_internship = :description, places = :places, duration = :duree, remuneration = :remuneration, start = :date_stage, id_company = :entreprise WHERE id_internship = :id;");
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':nom', $name);
+        $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':places', $places);
+        $stmt->bindParam(':duree', $duree);
+        $stmt->bindParam(':remuneration', $remuneration);
+        $stmt->bindParam(':date_stage', $date_stage);
+        $stmt->bindParam(':entreprise', $entreprise);
+        $stmt->execute();
+    }
 }
 

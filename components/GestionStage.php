@@ -19,7 +19,6 @@
             $remuneration = $stage['remuneration'];
             $start = $stage['start'];
             include('../components/general/itemListStage.php');
-
         }
     ?>
 </div>

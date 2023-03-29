@@ -156,6 +156,42 @@ $(document).ready(function() {
       }
     });
   });
+  $('[id^="wvalidate_"]').click(function() {
+    var id = $(this).attr('id');
+    var num = id.substring(10);
+    var name = $('[name="name'+ num +'"]').val();
+    var surname = $('[name="surname'+ num +'"]').val();
+    var description = $('[name="description'+ num +'"]').val();
+    var places = $('[name="activity'+ num +'"]').val();
+    var duree = $('[name="duree'+ num +'"]').val();
+    var argent = $('[name="argent'+ num +'"]').val();
+    var start = $('[name="start'+ num +'"]').val();
+    $.ajax({
+      type: "POST",
+      url: "../fonctions/upStage.php",
+      data: { 
+        num: num,
+        name: name,
+        description: description,
+        places: places,
+        duree: duree,
+        argent: argent,
+        start: start,
+        surname: surname
+      }
+    });
+  });
+  $('[id^="wdelete_"]').click(function() {
+    var id = $(this).attr('id');
+    var num = id.substring(8);
+    $.ajax({
+      type: "POST",
+      url: "../fonctions/delStage.php",
+      data: {
+        num: num
+      }
+    });
+  });
 
 
 });

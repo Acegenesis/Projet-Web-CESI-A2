@@ -12,6 +12,7 @@
 
             <div class="gestionBtn">
                 <?php if($_COOKIE['status'] == 'Tuteur') : ?>
+                    
                     <a href="?type=recherche">recherche etudiants et pilotes</a>
                     <a href="?type=students">Gestion des étudiants</a>
                     <a href="?type=entreprises">Gestion des entreprises</a>

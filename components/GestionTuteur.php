@@ -7,8 +7,9 @@ if ($terme == ""){
 <div class="list">
     <?php  
         include ('../class/user.php');
+        $users = new User($conn);        
+
         if ($terme == ""){
-            $users = new User($conn);        
             $list = $users->getTuteur();
         }
         else

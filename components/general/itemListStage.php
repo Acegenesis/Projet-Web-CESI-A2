@@ -11,46 +11,57 @@
         <div>
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <span>
-                <label for="name">Intitulé</label>
-                <input type="text" name="name" value="<?php echo $title; ?>">
+                <label for="name<?php echo $id ?>">Intitulé</label>
+                <input type="text" name="name<?php echo $id ?>" value="<?php echo $title; ?>">
             </span>
             <span>
-                <label for="surname">Entreprise</label>
-                <input type="text" name="surname" value="<?php echo $company; ?>">
+                <label for="surname<?php echo $id ?>">Entreprise</label>
+                <select name="surname<?php echo $id ?>" id="surname">
+                    <?php
+                        require_once '../class/Entreprise.php';
+                        $ent = new Entreprise($conn);
+                        $ents = $ent->getAll();
+                        foreach($ents as $e) {
+                            if ($e['name_company'] === $company) {
+                                echo '<option selected data="' .$e['id_company'] . '">'.$e['name_company'].'</option>';
+                            } else {
+                                echo '<option data="' .$e['id_company'] . '">' . $e['name_company'] . '</option>';             
+                            }
+                        }
+                    ?>
+                </select>
             </span>
             <span>
-                <label for="address">Description</label>
+                <label for="address<?php echo $id ?>">Description</label>
                 <input type="text" name="surname" value="<?php echo $description; ?>">
             </span>
             <span>
-                <label for="city">Places libres</label>
-                <input type="text" name="surname" value="<?php echo $place; ?>">
+                <label for="places<?php echo $id ?>">Places libres</label>
+                <input type="number" min="0" name="places" value="<?php echo $place; ?>">
             </span>
             <span>
-                <label for="country">Durée</label>
-                <input type="text" name="surname" value="<?php echo $duration; ?>">
+                <label for="duree<?php echo $id ?>">Durée</label>
+                <input type="text" name="duree<?php echo $id ?>" value="<?php echo $duration; ?>">
             </span>
             <span>
-                <label for="country">Rémuneration</label>
-                <input type="text" name="surname" value="<?php echo $remuneration; ?>">
+                <label for="argent<?php echo $id ?>">Rémuneration</label>
+                <input type="text" name="argents<?php echo $id ?>" value="<?php echo $remuneration; ?>">
             </span>
             <span>
-                <label for="country">Début</label>
-                <input type="text" name="surname" value="<?php echo $start; ?>">
+                <label for="start<?php echo $id ?>">Début</label>
+                <input type="date" name="start<?php echo $id ?>" value="<?php echo $start; ?>">
             </span>
         </div>
         <div>
-            <span id="validate_<?php echo $id ?>">
+            <span id="wvalidate_<?php echo $id ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
                 </svg>
-                <input type="submit" name="update" value="Update">
             </span>
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" id="delete_<?php echo $id ?>">
+            <span id="wdelete_<?php echo $id ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                     <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
                 </svg>
-                <input type="submit" name="delete" value="Delete">
             </span>
         </div>
     </form>
