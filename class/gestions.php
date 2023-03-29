@@ -67,18 +67,7 @@ class Gestion {
 
  
 
-    function addStudent($login, $password, $id_promotion) {if ($login == "" || $password == "" || $id_promotion == "" ) {
-        echo "remplissez tous les champs svp";
-        }
-        else{
-        $stmt = $this->conn->prepare("INSERT INTO users (login, password,status, id_promotion) VALUES (:login, :password, 'eleve', :id_promotion)");
-        $stmt->bindParam(':login', $login);
-        $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':id_promotion', $id_promotion);
-
-        $stmt->execute();
-    }
-    }
+    
   
 
     function getPromotion() {

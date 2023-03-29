@@ -20,6 +20,13 @@ class search {
         return $result;
     }
 
+    function getTutor($terme) {
+        $stmt = $this->conn->prepare("SELECT name_promotion, name_campus, login, id_users FROM users JOIN promotion ON users.id_promotion = promotion.id_promotion JOIN campus ON promotion.id_campus = campus.id_campus JOIN address ON campus.id_address = address.id_address where status = 'tuteur' AND login LIKE '%$terme%';");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     function getSkills($id) {
         $stmt = $this->conn->prepare("SELECT name_skill FROM internship JOIN requires ON internship.id_internship = requires.id_internship LEFT JOIN skills ON requires.id_skill = skills.id_skill WHERE internship.id_internship = $id;");
         $stmt->execute();

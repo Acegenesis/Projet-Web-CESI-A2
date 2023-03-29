@@ -1,6 +1,4 @@
-<?php $a = 2; ?>
-<a href="../pages/CompanyAdd.php" class="name"><h3>ajouter nouvelle entreprise</h3></a>
-
+<div class="gestionBtn"><a href="../pages/CompanyAdd.php">Ajouter  nouvelle entreprise</a></div>
 <div class="list">
     <?php  
         include ('../class/gestions.php');
@@ -16,10 +14,7 @@
             $address = $comp['address'];
             $country = $comp['country'];
             $city = $comp['city'];
-            $accepted = $comp['accepted'];
-            $image = $comp['image_company'];
-
             include('../components/general/itemListEntreprise.php');
-        }
+        }        
     ?>
 </div>

@@ -238,7 +238,6 @@ svg {
   z-index: 2;
   top: 0;
   left: 0;
-  width: var(--secondary-width);
   height: 50px;
   border-radius: 50%;
   opacity: 0;
@@ -1031,12 +1030,11 @@ p {
   /*----Footer------*/
   /*----------------*/
 
-
   footer {
-    margin-top: calc(100%-100vh)j;
+    margin-top:20vh;
     width: var(--primary-width);
     color: var(--primary-color);
-    height: 80px;
+    height: 100px;
     background: var(--secondary-color);
     display: flex;
     gap: 20px;
@@ -1045,6 +1043,9 @@ p {
     font-size: 15px;
     font-weight: 100px;
     justify-content: space-between;
+    overflow:none;
+    position:relative;
+    bottom:0;
   }
 
   footer a {
@@ -1067,10 +1068,11 @@ p {
   }
 
   body {
-    position: relative;
-    float:calc(100vh - 100%);
-    min-height: 100vh;
+    float:bottom;
+    min-height: 50vh;
   }
+
+
 
   /*----------------*/
   /*----Contact--------*/
@@ -1114,6 +1116,12 @@ p {
 
   #contact a:hover {
     color: #666;
+  }
+
+  @media screen and (min-width: 0px) and (max-width:769px) {
+    #contact {
+      width: var(--primary-width);
+    }
   }
 
   /*----------------*/
@@ -1244,7 +1252,7 @@ p {
     font-weight: bold;
   }
 
-  .gestion form div span input[type="text"], .gestion form div span select {
+  .gestion form div span input[type="text"], .gestion form div span select, .gestion form div span textarea {
     border: 2px solid var(--primary-color);
     border-radius: 50px;
     padding: 10px;
@@ -1298,30 +1306,20 @@ p {
     cursor: pointer;
   }
 
-
-
-
-  /*
-
-.itemSolo .title {
-  width: 100%;
+.tuteur span {
   display: flex;
   justify-content: center;
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+  align-items: center;
 }
 
-.itemSolo label, .itemSolo .skills {
-  padding: 5px 20px;
+.tuteur span label {
   width: 100%;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
-  text-decoration: underline;
   cursor: pointer;
 }
 
-.itemSolo input, .itemSolo select {
+.tuteur span input {
   width: 100%;
   font-size: 20px;
   font-weight: 300;
@@ -1331,16 +1329,24 @@ p {
   cursor: pointer;
 }
 
-.itemSolo span {
-  width: max-content;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-}
-
-.itemSolo span label {
-  text-decoration: none;
+.tuteur select {
+  width: 100%;
+  font-size: 20px;
   font-weight: 300;
+  padding: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-*/
+.tuteur input[type="submit"] {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}

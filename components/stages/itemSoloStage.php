@@ -1,4 +1,4 @@
-<img src= <?php echo $image; ?> alt  ="" class="background">
+<img src="<?php echo $image; ?>" alt="" class="background">
 <div class="itemSolo">
         <div class="itemTitle">
             <h1><?php echo $title ?></h1>

@@ -17,6 +17,7 @@
             $search = 1;
             $stages = new search($conn);
             $stages_list = $stages->getStages($terme);
+            echo "test";
         }  
         foreach($stages_list as $stage) {
             $title = $stage['title_internship'];

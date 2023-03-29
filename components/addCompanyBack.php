@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$mail = $_POST['mail'];
     $adresse = $_POST['adresse'];
     $country = $_POST['country'];
-	$ville = $_POST['ville'];
+	$ville = $_POST['city'];
 	
 	};
 	
@@ -22,5 +22,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$adress = $company->getLastAdress(); 
 	$idAdress = $adress['0']['id_address'];
 	@$company->addCompany($nom, $description,$accStagiaires,$activity,$mail,$idAdress);
-	echo "requete effectue";
 ?>

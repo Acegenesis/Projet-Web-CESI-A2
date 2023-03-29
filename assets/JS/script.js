@@ -60,14 +60,14 @@ $(document).ready(function() {
       $('#drop_' + num ).addClass('dropped');
     } 
   });
-  $('[id^="validate_"]').click(function() {
+  $('[id^="tvalidate_"]').click(function() {
     var id = $(this).attr('id');
-    var num = id.substring(9);
-    var prenom = $('[name="name"]').val();
-    var surnom = $('[name="surname"]').val();
+    var num = id.substring(10);
+    var prenom = $('[name="name'+ num +'"]').val();
+    var surnom = $('[name="surname'+ num +'"]').val();
     var nom = prenom + '.' + surnom;
-    var campus = $('[name="campus"]').val();
-    var promo = $('[name="promo"]').val();
+    var campus = $('[name="campus'+ num +'"]').val();
+    var promo = $('[name="promo'+ num +'"]').val();
     $.ajax({
       type: "POST",
       url: "../fonctions/upTuteur.php",
@@ -79,4 +79,83 @@ $(document).ready(function() {
       }
     });
   });
+  $('[id^="tdelete_"]').click(function() {
+    var id = $(this).attr('id');
+    var num = id.substring(8);
+    $.ajax({
+      type: "POST",
+      url: "../fonctions/delTuteur.php",
+      data: {
+        num: num
+      }
+    });
+  });
+  $('[id^="evalidate_"]').click(function() {
+    var id = $(this).attr('id');
+    var num = id.substring(10);
+    var prenom = $('[name="name'+ num +'"]').val();
+    var surnom = $('[name="surname'+ num +'"]').val();
+    var nom = prenom + '.' + surnom;
+    var campus = $('[name="campus'+ num +'"]').val();
+    var promo = $('[name="promo'+ num +'"]').val();
+    $.ajax({
+      type: "POST",
+      url: "../fonctions/upTuteur.php",
+      data: { 
+        num: num,
+        nom: nom,
+        campus: campus,
+        promo: promo
+      }
+    });
+  });
+  $('[id^="edelete_"]').click(function() {
+    var id = $(this).attr('id');
+    var num = id.substring(8);
+    $.ajax({
+      type: "POST",
+      url: "../fonctions/delTuteur.php",
+      data: {
+        num: num
+      }
+    });
+  });
+  $('[id^="svalidate_"]').click(function() {
+    var id = $(this).attr('id');
+    var num = id.substring(10);
+    var name = $('[name="name'+ num +'"]').val();
+    var description = $('[name="description'+ num +'"]').val();
+    var activity = $('[name="activity'+ num +'"]').val();
+    var email = $('[name="email'+ num +'"]').val();
+    var address = $('[name="address'+ num +'"]').val();
+    var city = $('[name="city'+ num +'"]').val();
+    var country = $('[name="country'+ num +'"]').val();
+    $.ajax({
+      type: "POST",
+      url: "../fonctions/upEntreprise.php",
+      data: { 
+        num: num,
+        name: name,
+        description: description,
+        activity: activity,
+        email: email,
+        address: address,
+        city: city,
+        country: country
+      }
+    });
+  });
+  $('[id^="sdelete_"]').click(function() {
+    var id = $(this).attr('id');
+    var num = id.substring(8);
+    $.ajax({
+      type: "POST",
+      url: "../fonctions/delEntreprise.php",
+      data: {
+        num: num
+      }
+    });
+  });
+
+
 });

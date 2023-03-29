@@ -9,6 +9,8 @@
                 echo "Cherche tes favoris ...";
             } elseif ($a === 3) {
                 echo "Cherche un tuteur ...";
+            } elseif ($a === 4) {
+                echo "Cherche un étudiant ...";
             }
             ?>">
         <input type="submit" value="chercher" name = "s" />

@@ -1,4 +1,6 @@
-<img src= <?php echo $image; ?> alt="" class="background">
+<html lang="fr">
+    <!DOCTYPE html>
+<img src= <?php echo $image; ?> alt="image pour montrer l'activité de l'entreprise" class="background">
 <div class="itemSolo">
         <div class="itemTitle">
             <h1><?php echo $name ?></h1>

@@ -1,0 +1,192 @@
+classDiagram
+    class Entreprise {
+        -conn: Connection
+        +__construct(conn: Connection)
+        +getAll(): array
+        +getNumber(): array
+        +getMark(id: int): array
+        +getAllOffset(limit: int, offset: int): array
+        +getOne(id: int): array
+        +getPost(id: int): array
+        +addPost(id_users: int, id_company: int, comments: string, rating: int): void
+        +addadress(adresse: string, country: string, ville: string): void
+        +getLastAdress(): array
+        +addCompany(nom: string, description: string, accStagiaires: int, activity: string, mail: string, idAdress: int): void
+    }
+
+
+
+
+classDiagram
+    class Gestion {
+        -conn: Connection
+        +__construct(conn: Connection)
+        +getTuteur(): array
+        +getEleve(): array
+        +getEntreprise(): array
+        +getStage(): array
+        +updateTuteur(id: int, login: string, id_promotion: int): void
+        +updateEleve(id: int, login: string, id_promotion: int): void
+        +updateCompany(id: int, name: string, description: string, activity: string, mail: string, address: string, country: string, city: string, accepted: string, image: string): void
+        +deleteTuteur(id: int): void
+        +deleteEleve(id: int): void
+        +deleteCompany(id: int): void
+        +getPromotion(): array
+        +getCampus(): array
+    }
+
+    class Connection {
+        +__construct()
+        +prepare(query: string): Statement
+    }
+
+    class Statement {
+        +execute(): bool
+        +fetchAll(mode: int): array
+    }
+    
+    class PDO {
+        +__construct(dsn: string, username: string, password: string, options: array)
+        +prepare(query: string): Statement
+    }
+
+    class Address {
+        -id: int
+        -country: string
+        -city: string
+        -street: string
+    }
+
+    class Promotion {
+        -id: int
+        -name: string
+        -id_campus: int
+    }
+
+    class Campus {
+        -id: int
+        -name: string
+        -id_address: int
+    }
+
+    class Users {
+        -id: int
+        -login: string
+        -status: string
+        -id_promotion: int
+    }
+
+    class Company {
+        -id: int
+        -name: string
+        -description: string
+        -activity: string
+        -mail: string
+        -id_address: int
+        -accepted: string
+        -image: string
+    }
+
+    class Internship {
+        -id: int
+        -id_company: int
+        -id_user: int
+        -start_date: date
+        -end_date: date
+    }
+
+    class UserInternship {
+        -id_user: int
+        -id_internship: int
+    }
+
+    class UserCompany {
+        -id_user: int
+        -id_company: int
+    }
+
+    Address --> Campus
+    Promotion --> Campus
+    Users --> Promotion
+    Company --> Address
+    Internship --> Company
+    Internship --> Users
+    UserInternship --> Users
+    UserInternship --> Internship
+    UserCompany --> Users
+    UserCompany --> Company
+
+classDiagram
+    class search {
+        -conn: object
+        +__construct(conn: object)
+        +getStages(terme: string): array
+        +get_entreprises(terme: string): array
+        +getTutor(terme: string): array
+        +getSkills(id: int): array
+        +getMark(id: int): array
+    }
+
+
+class dbConnection {
+    Stage : +__construct(conn: PDO)
+    Stage : +getAll() : array
+    Stage : +getForEnterprise(id: int) : array
+    Stage : +getNumber() : array
+    Stage : +getAllOffset(limit: int, offset: int) : array
+    Stage : +getSkills(id: int) : array
+    Stage : +getAllSkills() : array
+    Stage : +getOne(id: int) : array
+    Stage : +getLastStage() : array
+    Stage : +getAllFav(id: int) : array
+    Stage : +getFav(id_internship: int, id_users: int) : array
+    Stage : +addFav(id_internship: int, id_users: int) : void
+    Stage : +delFav(id_internship: int, id_users: int) : void
+    Stage : +addStage(nom: string, description: string, places: int, duree: int, remuneration: int, date_post: string, debut_stage: string, entreprise: string, skills: array) : void
+    requires: +__construct(conn: PDO)
+    requires: id_internship
+    requires: id_skill
+    internship: +__construct($conn)
+    internship: id_internship
+    internship: title_internship
+    internship: image_internship
+    internship: description_internship
+    internship: places
+    internship: duration
+    internship: remuneration
+    internship: post
+    internship: start
+    company: +__construct($conn)
+    company: id_company
+    company: description_company
+    company: accepted
+    company: name_company
+    wishlist: +__construct($conn)
+    wishlist: id_wishlist
+    wishlist: id_users
+    wishlist: id_internship
+    skills: +__construct($conn)
+    skills: id_skill
+    skills: name_skill
+}
+
+
+
+
+
+    class User {
+        -conn: PDO
+        +__construct(conn: PDO)
+        +getOne(id: int): array
+        +getUser(id: int): array
+        +getAdress(id: int): array
+        +getPromotion(): array
+        +getCampus(): array
+        +getTuteur(): array
+        +getEleve(): array
+        +updateTuteur(id_users: int, login: string, campus: string, promotion: string): void
+        +updateEleve(id_users: int, login: string, id_promotion: int): void
+        +deleteTuteur(id_users: int): void
+        +deleteEleve(id_users: int): void
+        +addTutor(login: string, password: string, promotion: string, campus: string): void
+    }

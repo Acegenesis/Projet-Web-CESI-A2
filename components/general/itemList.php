@@ -1,5 +1,5 @@
 <div class="itemList" style="height: <?php echo ($a === 0) ? '300px' : '200px' ?>" <?php echo "id = 'item_" . $id . "'"?>>
-    <img src= <?php echo $image; ?> alt  ="">
+    <img src= <?php echo $image; ?> alt  ="image d'illustration pour l'entreprise">
     <div class="itemText">
         <div class="itemTitle">
             <span>

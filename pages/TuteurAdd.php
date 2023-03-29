@@ -1,5 +1,7 @@
-<?php include('../components/basic/header.php');
+<?php 
+include('../components/basic/header.php');
 include('../components/basic/navbar.php');
-include('../components/addTuteurBack.php');
+include '../fonctions/addTuteurBack.php';
+include('../components/addTuteur.php');
 include('../components/basic/footer.php');
 ?>

@@ -1,11 +1,15 @@
-<?php $a = 2; ?>
-<a href="../pages/TuteurAdd.php" class="name"><h3>ajouter nouveau tuteur</h3></a>
+<?php $a = 2; 
+?>
+<div class="gestionBtn"><a href="../pages/TuteurAdd.php">Ajouter nouveau tuteur</a></div>
 
 <div class="list">
     <?php  
         include ('../class/user.php');
-        $users = new User($conn);        
-        $list = $users->getTuteur();
+        
+            $users = new User($conn);        
+            $list = $users->getTuteur();
+        
+                
         foreach($list as $user) {
             $id = $user['id_users'];
             $name = explode('.', $user['login'])[0];
